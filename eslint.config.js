@@ -12,6 +12,7 @@ export default defineConfig([
       js.configs.recommended,
       reactHooks.configs['recommended-latest'],
       reactRefresh.configs.vite,
+      "node_modules/standard/eslintrc.json"
     ],
     languageOptions: {
       ecmaVersion: 2020,
