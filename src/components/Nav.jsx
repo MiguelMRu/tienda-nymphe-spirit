@@ -1,13 +1,14 @@
+import {Link} from 'react-router-dom';
 export function Nav() {
   return (
     <nav>
       <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/about">Sobre Nosotros</a></li>
-        <li><a href="/portfolio">Portafolio</a></li>
-        <li><a href="/shop">Tienda</a></li>
-        <li><a href="/services">Servicios</a></li>
-        <li><a href="/cart">Carrito</a></li>
+        <li><Link to="/">Inicio</Link></li>
+        <li><Link to="/about">Sobre mi</Link></li>
+        <li><Link to="/portfolio">Portafolio</Link></li>
+        <li><Link to="/catalogo">Catálogo</Link></li>
+       {/* <li><Link to="/shop">Tienda</Link></li> 
+        <li><Link to="/cart">Carrito</Link></li> se implementará en un futuro*/}
       </ul>
     </nav>
   );
