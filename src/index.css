@@ -1,3 +1,35 @@
+@font-face {
+  font-family: 'Learning-Curve';
+  src: url('/fonts/LearningCurve.ttf') format('truetype');
+
+}
+
+@font-face {
+  font-family: 'Snell';
+  src: url('/fonts/SnellBT-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Snell';
+  src: url('/fonts/SnellBT-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-VariableFont.ttf') format('truetype');
+}
+
+
+:root {
+  --primary-font: 'Learning-Curve', sans-serif;
+  --heading-font: 'Snell', sans-serif;
+  --shop-font: 'Montserrat', monospace;
+}
+
 /* 1. Use a more-intuitive box-sizing model */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -20,6 +52,8 @@ body {
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+  font-family: var(--primary-font);
+  
 }
 
 /* 6. Improve media defaults */
@@ -36,6 +70,7 @@ input, button, textarea, select {
 /* 8. Avoid text overflows */
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
+
 }
 
 /* 9. Improve line wrapping */
@@ -44,6 +79,8 @@ p {
 }
 h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
+  font-family: 'Snell', sans-serif;
+  font-weight: normal;
 }
 
 /*
