@@ -14,7 +14,7 @@ function App() {
   };
 
 
-//En esta sección se definen las rutas de la aplicación
+//Layout de la aplicacion
   return (
       <>
         <Header toggleMenu={toggleMenu} />
