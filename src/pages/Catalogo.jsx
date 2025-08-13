@@ -1,15 +1,26 @@
-import { useRef } from 'react';
+import { useState,useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import '../styles/Catalogo.css';
 
 
 export function Catalogo() {
+
+  const [error, setError] = useState('');
   
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    if (!form.current) return;
+    if (!form.current.name.value || !form.current.email.value || !form.current.message.value) {
+      setError('Por favor, completa todos los campos.');
+      return;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(form.current.email.value)) {
+      setError('Por favor, introduce un correo electrónico válido.');
+      return;
+    }
 
     emailjs
       .sendForm(import.meta.env.VITE_EMAIL_SERVICE, import.meta.env.VITE_EMAIL_TEMPLATE, form.current, {
@@ -17,7 +28,8 @@ export function Catalogo() {
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          //Si hay un previo, al enviar se debe borrar
+          setError('');
         },
         (error) => {
           console.log('FAILED...', error.text);
@@ -33,15 +45,18 @@ export function Catalogo() {
       <h1>Catálogo</h1>
       <p>Descubre los productos que ofrecemos para llevar tus ideas al siguiente nivel.</p>
       <form ref={form} onSubmit={sendEmail}>
-        <label htmlFor="name">Name</label>
-        <input type="text" name="name" />
 
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" />
+          <input type="text" name="name" placeholder='Nombre'/>
 
-        <label htmlFor="message">Message</label>
-        <textarea name="message" />
-        <input type="submit" value="Send" />
+          <input type="email" name="email" placeholder='Correo electrónico'/>
+
+          <textarea name="message" placeholder='Mensaje' />
+
+          {error && <p className="error">{error}</p>}
+
+        <input type="submit" value="Enviar" />
+
+        
       </form>
     </main>
   );
