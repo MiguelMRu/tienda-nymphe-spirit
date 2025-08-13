@@ -5,7 +5,6 @@ import { NotFound } from '../pages/NotFound'
 import { Cart } from '../pages/Cart'
 import { Portfolio } from '../pages/Portfolio'
 import { Shop } from '../pages/Shop'
-import { About } from '../pages/About'
 import App from '../App.jsx'
 
 //Componente que define las rutas de la aplicación
@@ -17,7 +16,6 @@ export function AppRouter() {
             <Route path="/" element={<App />}>
                 <Route index element={<Home />} />
                 <Route path="/catalogo" element={<Catalogo />} />
-                <Route path="/about" element={<About />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/portfolio" element={<Portfolio />} />
                 <Route path="/shop" element={<Shop />} />
