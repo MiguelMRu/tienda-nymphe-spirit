@@ -1,9 +1,11 @@
 main {
   width: 100%;
-
+  display: flex;
+  flex-direction: column;
 }
 
 .home {
+  flex-basis: 756px;
   height: 100vh;
   width: 100vw;
 
@@ -19,48 +21,135 @@ main {
 }
 
 .about {
-  background-image: url('../assets/images/fondo_sobre_mi.webp');
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 100vh;
+  min-height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-wrap: wrap;
   color: #fff;
 
-  & img {
+  & .about-header {
+    background-image: url('../assets/images/fondo_sobre_mi.webp');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+
+  }
+
+  & .about-header img {
     max-width: 80%;
     height: auto;
     margin-inline: auto;
+    margin-top: 30px;
   }
 
-  & h1 {
-    font-size: 5rem;
-    text-shadow: 2px 2px 4px #00000080;
-    margin-inline: auto;
-  }
+  
 
-  & article {
-    max-width: 80%;
-    margin-inline: auto;
-    background-color: #fff;
-    color: #000;
-    margin-bottom: -2rem;
-    z-index: 1;
-    text-align: justify;
-    text-wrap: balance;
-    padding: 2rem;
-
-    & p {
-      font-size: 1rem;
-    }
-  }
-
-  & footer {
+  & .about-text {
     background: url('../assets/images/Bienvenida.webp') no-repeat center center;
     background-size: cover;
     width: 100%;
-    height: 30%;
+    min-height: 30%;
 
+    & .about-info {
+      height: fit-content;
+      margin-top: -10rem;
+      width: 80%;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    & h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px #00000080;
+    line-height: .8;
+    margin-left: 1rem;
+  }
+
+  & .about-description {
+    max-width: 100%;
+    height: 275px;
+    background-color: #fff;
+    color: #000;
+    text-align: justify;
+    text-wrap: balance;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+
+    & p {
+      font-size: .9rem;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 2rem;
+      right: 2rem;
+      text-align: justify;
+    }
+  }
+
+  }
+}
+
+@media screen and (width >= 850px) {
+  .home {
+    width: 100%;
+  }
+  
+  .about {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+
+    .about-header {
+      flex-basis: 50%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-text {
+      flex-basis: 50%;
+      background-size: cover;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      & .about-info {
+        margin: 0 auto;
+
+        & h1 {
+          font-size: 8rem;
+          text-shadow: 3px 3px 4px #00000080;
+          margin-left: 2rem;
+        }
+
+       .about-description {
+          height: 450px;
+
+          & p{
+            top: 50%;
+            font-size: 1.8rem;
+            left: 2.5rem;
+            right: 2.5rem;
+
+          }
+
+       }
+
+    }
+    }
   }
 }
