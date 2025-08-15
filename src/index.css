@@ -31,6 +31,7 @@
   --primary-font: 'Learning-Curve', sans-serif;
   --heading-font: 'Snell', sans-serif;
   --shop-font: 'Montserrat', monospace;
+  --hover-color: #c5bede;
 }
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -95,3 +96,16 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+
+
+svg:hover, svg:active {
+  cursor: pointer;
+  stroke: var(--hover-color);
+  transition: all 0.2s ease;
+}
+
+a:hover, a:active {
+  cursor: pointer;
+  color: var(--hover-color);
+  transition: all 0.2s ease;
+}

@@ -65,7 +65,7 @@ main {
     font-size: 4rem;
     text-shadow: 2px 2px 4px #00000080;
     line-height: .8;
-    margin-left: 1rem;
+    margin-left: 1.2rem;
   }
 
   & .about-description {
@@ -90,9 +90,10 @@ main {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: 2rem;
-      right: 2rem;
+      left: 2.2rem;
+      right: 2.2rem;
       text-align: justify;
+      text-wrap: balance;
     }
   }
 
@@ -133,7 +134,7 @@ main {
         & h1 {
           font-size: 8rem;
           text-shadow: 3px 3px 4px #00000080;
-          margin-left: 2rem;
+          margin-left: 2.3rem;
         }
 
        .about-description {

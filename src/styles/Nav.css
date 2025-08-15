@@ -21,14 +21,17 @@ nav.open {
   backdrop-filter:  brightness(0.5) blur(2px);
   z-index: 1000;
 
+
+
   & ul li:nth-child(odd) {
     animation: appear-left 0.5s ease forwards;
-
   }
 
   & ul li:nth-child(even) {
     animation: appear-right 0.5s ease forwards;
   }
+
+  
 }
 
 @keyframes appear-right {
@@ -68,12 +71,16 @@ nav ul {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    
   }
+
+
 
   & a {
     text-decoration: none;
     color: #000;
-    padding-top: 1rem;
+    line-height: 0;
+    transform: translateY(10px);
   }
 
   
@@ -109,6 +116,7 @@ nav ul {
     nav ul li {
       height: 150px;
     }
+
 
 
     @keyframes appear-right {

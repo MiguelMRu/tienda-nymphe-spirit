@@ -43,6 +43,11 @@ svg {
   height: 20px;
 }
 
+.cart-icon:hover, .cart-icon:active {
+  cursor: pointer;
+  fill: var(--hover-color);
+}
+
 
 @media screen and (width >= 768px) {
   header {
