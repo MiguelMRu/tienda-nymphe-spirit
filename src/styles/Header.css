@@ -3,7 +3,8 @@ header {
   left: 0;
   width: 100%;
   height: 80px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2.5rem 1rem 1.5rem;
@@ -11,13 +12,16 @@ header {
   top: env(safe-area-inset-top, 0);
  
 
-  & a{
+  & .logo {
       height: fit-content;
       width: fit-content;
+      justify-self: center;
+      margin-bottom: -1.5rem;
+
   }
 
   & img{
-    width: 85px;
+    width: 55px;
     height: auto;
   }
 }
@@ -26,6 +30,7 @@ header label {
   cursor: pointer;
   height: 20px;
   width: 20px;
+  justify-self: start;
 }
 
 header input[type="checkbox"] {
@@ -35,7 +40,9 @@ header input[type="checkbox"] {
 .icons {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  gap: .5rem;
+  justify-self: end;
 }
 
 svg {
@@ -62,7 +69,7 @@ svg {
   }
 
   & img{
-    width: 150px;
+    width: 100px;
     height: auto;
   }
 }

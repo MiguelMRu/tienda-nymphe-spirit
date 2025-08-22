@@ -15,8 +15,8 @@ export function Header({ toggleMenu }) {
         </svg>
       </label>
 
-      <Link to="/">
-        <img src='/images/logo.webp' alt="Logo" />
+      <Link className='logo' to="/">
+        <img src='/images/logo.webp' alt="Logo de Nymphe Spirit" />
       </Link>
 
       <div className='icons'>

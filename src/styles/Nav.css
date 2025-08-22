@@ -12,9 +12,7 @@ nav {
 
 }
 
-nav.closed {
-  transform: translateX(-100%);
-}
+
 
 nav.open {
   transform: translateX(0);
@@ -39,11 +37,56 @@ nav.open {
     transform: translateX(70%);
   }
 
+  to{
+    transform: translateX(0);
+  }
+
 }
 
 @keyframes appear-left {
   from {
     transform: translateX(-70%);
+  }
+
+  to{
+    transform: translateX(0);
+  }
+
+}
+
+
+
+
+nav.closed {
+  display: none;
+
+  & ul li:nth-child(odd) {
+    animation: appear-left 0.5s ease reverse;
+  }
+
+  & ul li:nth-child(even) {
+    animation: disappear-right 0.5s ease reverse;
+  }
+}
+
+@keyframes disappear-right {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+
+}
+
+@keyframes disappear-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
   }
 
 }

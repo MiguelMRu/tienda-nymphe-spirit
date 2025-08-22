@@ -107,5 +107,5 @@ svg:hover, svg:active {
 a:hover, a:active {
   cursor: pointer;
   color: var(--hover-color);
-  transition: all 0.2s ease;
+  transition: all 0.1s ease;
 }
