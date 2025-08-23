@@ -20,7 +20,7 @@ export function Home() {
   return (
     <main>
       {/* Esta parte tiene que tener un tamño fijo de la imagen */}
-      <section className="home">
+      <section className="home" id="home">
         <picture>
           <source media="(max-width: 600px)" srcSet="/images/fondo_home_movil.webp" />
           <source media="(min-width: 601px)" srcSet="/images/fondo_home_escritorio.PNG" />
