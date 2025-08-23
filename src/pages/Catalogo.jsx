@@ -13,7 +13,7 @@ export function Catalogo() {
     e.preventDefault();
 
     if (!form.current.name.value || !form.current.email.value || !form.current.message.value) {
-      setError('Por favor, completa todos los campos.');
+      setError('Por favor, completa todos los campos obligatorios.');
       return;
     }
 
@@ -37,20 +37,19 @@ export function Catalogo() {
       );
   };
 
-  //Pendiente validar que el email tenga un formato correcto
-  //Pendiente validar que los campos no estén vacíos
-  //Borrar los campos del formulario después de enviar
   return (
     <main>
       <h1>Catálogo</h1>
       <p>Descubre los productos que ofrecemos para llevar tus ideas al siguiente nivel.</p>
-      <form ref={form} onSubmit={sendEmail}>
+      <form ref={form} onSubmit={sendEmail} method='POST' enctype="multipart/form-data"> 
 
-          <input type="text" name="name" placeholder='Nombre'/>
+          <input type="text" name="name" placeholder='Nombre*'/>
 
-          <input type="email" name="email" placeholder='Correo electrónico'/>
+          <input type="email" name="email" placeholder='Correo electrónico*'/>
 
-          <textarea name="message" placeholder='Mensaje' />
+          <textarea name="message" placeholder='Mensaje*' />
+
+          <input type="file" name="file" accept='image/*,.pdf,.doc,.docx' />
 
           {error && <p className="error">{error}</p>}
 
